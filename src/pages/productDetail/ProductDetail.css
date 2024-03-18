@@ -1,0 +1,187 @@
+.product-view-container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  min-height: 60%;
+  border: 1px solid red;
+}
+
+.product-view {
+  width: 70%;
+  min-width: 700px;
+  border: 1px solid blue;
+  height: 100%;
+  display: flex;
+}
+
+.product-left {
+  height: 100%;
+  border: 1px solid rebeccapurple;
+  width: 55%;
+  min-width: 300px;
+}
+
+.product-left .product-image {
+  height: 80%;
+  width: 100%;
+  border: 1px solid rebeccapurple;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.product-left .product-image .slide-panel {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+
+  object-fit: cover;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.product-left .product-image .slide-panel::-webkit-scrollbar {
+  display: none;
+}
+
+.prev,
+.next {
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.25s;
+}
+
+.prev:hover,
+.next:hover {
+  transform: scale(1.25);
+}
+
+.product-left .product-image img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  scroll-snap-align: start;
+  min-width: 100%;
+  /* border-radius: 10p; */
+}
+
+.product-right {
+  min-height: 100%;
+  border: 1px solid forestgreen;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.product-right h2 {
+  font-size: 1.5rem;
+}
+
+.product-right .rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-right .rating .star-icon {
+  color: #339999;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.product-right .rating:hover .star-icon {
+  color: #85c1c1;
+}
+
+.product-right .rating span {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.product-right .price {
+  color: #ff0000;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.product-right .size-chart-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.product-right .size-chart-title:hover {
+  color: rgb(114, 113, 113);
+}
+
+.product-right .size-chart p {
+  font-size: 0.8rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.product-right .size-chart p:hover {
+  color: rgb(114, 113, 113);
+}
+
+.product-right .size-chart p span {
+  font-size: 0.6rem;
+  font-weight: 800;
+}
+
+.product-right .size-chart select {
+  background-color: #cfc2c2;
+  border: none;
+  outline: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%;
+
+  transition: all 0.3s;
+}
+
+.product-right .size-chart select:hover {
+  border-radius: 0;
+}
+
+.product-right .quantity {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  font-size: 0.7rem;
+}
+
+.product-right .quantity input {
+  text-align: center;
+  background-color: #cfc2c2;
+  border: none;
+  outline: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%;
+
+  transition: all 0.3s;
+}
+
+.product-right .quantity input:hover {
+  border-radius: 0;
+  transition: all 0.3s;
+}

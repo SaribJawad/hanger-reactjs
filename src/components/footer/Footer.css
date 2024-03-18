@@ -1,0 +1,181 @@
+footer {
+  margin-top: 20px;
+  height: auto;
+  width: 100%;
+  background-color: #000000;
+  color: white;
+}
+
+.footer-header {
+  margin: auto;
+  width: 70%;
+  padding: 25px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-header-icons {
+  display: flex;
+  gap: 3px;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.footer-header h3 {
+  font-size: 0.9rem;
+}
+
+hr {
+  width: 100%;
+  height: 0.5px;
+  background-color: rgb(255, 255, 255);
+}
+
+.footer-mid {
+  margin: auto;
+  width: 70%;
+  height: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.footer-mid .about-us {
+  padding: 30px 0;
+  flex: 1.7;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-mid .about-us h3 {
+  font-size: 1rem;
+}
+
+.footer-mid .about-us p {
+  font-size: 0.8rem;
+}
+
+.footer-mid .quick-links {
+  flex: 1;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-mid .quick-links h3 {
+  font-size: 1rem;
+}
+
+.quick-links .links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.quick-links .links p {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  cursor: pointer;
+  transition: linear 0.3s;
+}
+
+.quick-links .links p:hover {
+  color: #838383;
+}
+
+.footer-mid .news-letter {
+  padding: 30px 0;
+  flex: 2;
+}
+
+.flex-div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: linear 0.3s;
+}
+
+.flex-div:hover {
+  color: #838383;
+}
+
+.news-letter {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.news-letter h3 {
+  font-size: 1rem;
+}
+
+.news-letter p {
+  font-size: 0.8rem;
+}
+
+.news-letter input {
+  padding: 5px 10px;
+  color: #6e6e6e;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #2b2424;
+  transition: linear 0.1s;
+}
+
+.news-letter input:hover {
+  background-color: #161313;
+}
+
+.news-letter .check-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.news-letter .check-box span {
+  font-size: 0.7rem;
+}
+
+.news-letter button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 20px 15px;
+  border-radius: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.news-letter button:hover {
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.copyright {
+  padding: 25px 0;
+  margin: auto;
+  width: 70%;
+  font-size: 0.6rem;
+}
+
+.copyright p span {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.copyright p span:hover {
+  color: #838383;
+}

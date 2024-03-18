@@ -1,0 +1,133 @@
+.cat-container {
+  height: auto;
+}
+
+.category-banner {
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+
+.category-banner img {
+  filter: grayscale(90%) brightness(80%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-banner span {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 7vw;
+  font-weight: 600;
+}
+
+.category-card-container {
+  margin: 30px auto 0;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  height: auto;
+  padding: 20px;
+}
+
+.category-card {
+  height: 400px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.category-card:hover {
+  /* filter: grayscale(100%); */
+  filter: opacity(80%);
+}
+
+.category-card:hover .category-card-img img {
+  transform: scale(1.2);
+}
+
+.category-card-img {
+  height: 70%;
+  overflow: hidden;
+}
+
+.category-card-img img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.category-card-desc {
+  /* width: 100%;
+  height: 100%; */
+  align-items: center;
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+
+  background-color: #fae7e7;
+}
+
+.category-card-desc h3 {
+  font-size: 0.9rem;
+}
+
+.category-card-desc .star {
+  display: flex;
+  align-items: center;
+}
+
+.star span {
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+.star .star-icon {
+  color: #538686;
+  transition: all 0.2s;
+}
+
+.star:hover .star-icon {
+  color: #829b9b;
+}
+
+.category-card-desc p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fe4545;
+}
+
+.sort-input {
+  padding-top: 20px;
+  padding-right: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+}
+
+.sort-input select {
+  background-color: #beadad;
+  border: none;
+  font-size: 0.8rem;
+  padding: 7px 10px;
+  outline: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
