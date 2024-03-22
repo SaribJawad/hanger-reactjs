@@ -1,7 +1,7 @@
 .cart-section {
   height: auto;
-  width: 100%;
-  background-color: aliceblue;
+  width: 95%;
+  margin: auto;
 }
 
 a {
@@ -12,18 +12,18 @@ a {
 .cart-container {
   margin: 20px auto;
   padding: 20px;
-  width: 80%;
-  min-width: 400px;
+  width: 85%;
+  /* min-width: 400px; */
   height: auto;
   /* background-color: rgb(55, 52, 58); */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
 }
 
 .cat-box {
-  height: 550px;
+  height: 520px;
   width: 330px;
   overflow: hidden;
   display: flex;
@@ -78,4 +78,47 @@ a {
 
 .cat-button button:hover {
   border-radius: 0;
+}
+
+.cat-box {
+  color: black;
+}
+
+@media screen and (max-width: 490px) {
+  .cat-box {
+    height: 230px;
+    width: 150px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s;
+  }
+  .cart-container {
+    margin: 0;
+    width: 100%;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .cart-section {
+    height: auto;
+    width: 100%;
+    margin: 0;
+  }
+
+  .cat-box {
+    gap: 10px;
+  }
+
+  .cat-button h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .cat-button button {
+    width: 100%;
+    font-size: 0.8rem;
+  }
 }

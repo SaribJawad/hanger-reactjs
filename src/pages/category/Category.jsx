@@ -6,7 +6,7 @@ import { MdSort } from "react-icons/md";
 
 function Category() {
   const { name } = useParams();
-  const { data, handleSort } = useAppContext();
+  const { data, handleSort, formatter } = useAppContext();
   const categoryItems = data[name] || [];
 
   function getImage() {
@@ -61,7 +61,7 @@ function Category() {
 
                   <span style={{ color: "#000" }}>{item.reviews} reviews</span>
                 </div>
-                <p>Rs.{item.price}</p>
+                <p>{formatter.format(item.price)}</p>
               </div>
             </div>
           </Link>

@@ -4,6 +4,8 @@ import Navbar from "./components/navbar/Navbar";
 import Category from "./pages/category/Category";
 import Footer from "./components/footer/Footer";
 import ProductDetail from "./pages/productDetail/ProductDetail";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import Cart from "./pages/cart/Cart";
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
           path="category/:categoryName/:productId"
           element={<ProductDetail />}
         />
+        <Route path="cart" element={<Cart />} />
       </Routes>
+      <ScrollToTop />
       <Footer />
     </div>
   );

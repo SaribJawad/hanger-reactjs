@@ -64,9 +64,9 @@ nav #mobile .hamburger {
     flex-direction: column;
     gap: 2rem;
     flex-wrap: no-wrap;
-    position: fixed;
-    height: calc(100vh - 60px); /* Adjusted height */
-    top: 60px;
+    position: absolute;
+    height: calc(100vh); /* Adjusted height */
+    top: 66px;
     width: 400px;
     left: -400px;
     color: #fff;
@@ -89,5 +89,9 @@ nav #mobile .hamburger {
   a {
     color: white;
     text-decoration: none;
+  }
+
+  .cart-icon {
+    color: black;
   }
 }

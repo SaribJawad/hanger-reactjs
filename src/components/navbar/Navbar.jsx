@@ -4,13 +4,29 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 import { useAppContext } from "../../context/Context";
 import { Link } from "react-router-dom";
+import { useCallback, useEffect } from "react";
 
 function Navbar() {
-  const { clicked, handleClick } = useAppContext();
-
-  const { data } = useAppContext();
+  const { clicked, handleClick, cartItems, data } = useAppContext();
 
   const categories = Object.keys(data);
+
+  const handleScroll = useCallback(() => {
+    if (clicked) {
+      handleClick();
+    }
+  }, [clicked, handleClick]);
+
+  useEffect(
+    function () {
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    },
+    [handleScroll]
+  );
+
   return (
     <nav>
       <div id="mobile" onClick={handleClick}>
@@ -41,8 +57,10 @@ function Navbar() {
         })}
       </div>
       <div className="cart-button">
-        <IoCartOutline className="cart-icon" />
-        <span className="no-of-cart">0</span>
+        <Link to={"/cart"}>
+          <IoCartOutline className="cart-icon" />
+        </Link>
+        <span className="no-of-cart">{cartItems.length}</span>
       </div>
     </nav>
   );

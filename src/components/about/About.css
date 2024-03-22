@@ -1,5 +1,5 @@
 .about-section {
-  height: 100vh;
+  height: auto;
   width: 100%;
 }
 
@@ -38,4 +38,10 @@
   font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 1030px) {
+  .about {
+    flex-direction: column;
+  }
 }

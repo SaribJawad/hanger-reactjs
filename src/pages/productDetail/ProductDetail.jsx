@@ -5,25 +5,35 @@ import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import { IoIosStar } from "react-icons/io";
 import { TbRulerMeasure } from "react-icons/tb";
-
-import { useRef } from "react";
+import { useEffect } from "react";
 
 function ProductDetail() {
   const { categoryName, productId } = useParams();
-  const { getProduct } = useAppContext();
-
-  let imageContainerRef = useRef(null);
-
-  function prev() {
-    imageContainerRef.current.scrollLeft -= 500;
-  }
-
-  function next() {
-    imageContainerRef.current.scrollLeft += 500;
-  }
+  const {
+    getProduct,
+    prev,
+    next,
+    imageContainerRef,
+    dispatch,
+    addToCart,
+    isInCart,
+    cartItems,
+    itemQuantity,
+    formatter,
+  } = useAppContext();
 
   const product = getProduct(categoryName, productId);
-  console.log(product);
+
+  useEffect(
+    function () {
+      dispatch({
+        type: "toggleCatButton",
+        payload: cartItems?.some((item) => item.id === product?.id),
+      });
+    },
+    [dispatch, cartItems, product]
+  );
+
   return (
     <div className="product-view-container">
       <div className="product-view">
@@ -38,7 +48,6 @@ function ProductDetail() {
               ))}
             </div>
             <div className="next" onClick={next}>
-              {" "}
               <MdNavigateNext size={30} />
             </div>
           </div>
@@ -55,7 +64,7 @@ function ProductDetail() {
             <span>{product?.reviews} reviews</span>
           </div>
           <div className="price">
-            <p>Rs.{product?.price}.00</p>
+            <p>{formatter.format(product?.price)}</p>
           </div>
           <p className="size-chart-title">
             <TbRulerMeasure />
@@ -74,25 +83,32 @@ function ProductDetail() {
           </div>
           <div className="quantity">
             <p>Quanity</p>
-            <input type="number" defaultValue={1} min={1} />
+            <input
+              type="number"
+              value={itemQuantity}
+              min={1}
+              onChange={(e) =>
+                dispatch({ type: "itemQuantity", payload: e.target.value })
+              }
+            />
           </div>
-          <button>Add to cart</button>
+          <button onClick={() => addToCart(product)}>
+            {isInCart ? "Added to the cart" : "Add to cart"}
+          </button>
           <div className="product-description">
-            <p>Product description</p>
+            <h3>Product description:</h3>
             <p>{product?.productDescription}</p>
           </div>
-          <p>Country of production: Pakistan</p>
-          <p>
-            Wash care: Machine wash Cold with similar Colors.Only Non-chlorine
+          <p className="production-country">Country of production: Pakistan</p>
+          <p className="wash-care">
+            Wash care: Machine wash Cold with similar Colors. Only Non-chlorine
             bleach if needed. Dry in a dryer (recommended) & Iron If needed!
           </p>
           <div className="catalog">
-            <p>
-              Catalog{" "}
-              <Link to={`/category/${categoryName}`}>
-                <span>{categoryName}</span>
-              </Link>
-            </p>
+            <p>Catalog :</p>
+            <Link to={`/category/${categoryName}`}>
+              <span>{categoryName}</span>
+            </Link>
           </div>
         </div>
       </div>
